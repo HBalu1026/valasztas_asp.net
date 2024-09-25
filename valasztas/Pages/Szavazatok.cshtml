@@ -1,0 +1,44 @@
+﻿@page
+@model valasztas.Pages.SzavazatokModel
+
+@{
+    ViewData["Title"] = "Szavazatok";
+}
+
+<h1>Szavazatok</h1>
+
+<h4>Jelolt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Jelolt.Nev" class="control-label"></label>
+                <input asp-for="Jelolt.Nev" class="form-control" />
+                <span asp-validation-for="Jelolt.Nev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jelolt.Kerulet" class="control-label"></label>
+                <input asp-for="Jelolt.Kerulet" class="form-control" />
+                <span asp-validation-for="Jelolt.Kerulet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jelolt.SzavazatokSzama" class="control-label"></label>
+                <input asp-for="Jelolt.SzavazatokSzama" class="form-control" />
+                <span asp-validation-for="Jelolt.SzavazatokSzama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
